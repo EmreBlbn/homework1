@@ -7,9 +7,11 @@ import static spark.Spark.get;
 import static spark.Spark.port;
 import static spark.Spark.post;
 
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.*;
 
 import spark.ModelAndView;
 import spark.template.mustache.MustacheTemplateEngine;
@@ -31,6 +33,12 @@ public class App {
     }
 
     public static void main(String[] args) {
+      Logger logger =Logger.getLogger(App.class.getName());
+      
+
+      int port = Integer.parseInt(System.getenv("PORT"));
+      port(port);
+
       port(getHerokuAssignedPort());
 
       get("/", (req, res) -> "Hello, World");
