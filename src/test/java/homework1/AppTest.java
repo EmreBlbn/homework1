@@ -10,60 +10,37 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 class AppTest {
-    @Test
-    public void testFound() {
-       ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-       assertTrue(App.search(array, 4));
-     }
- 
-     @Test
-     public void testNotFound() {
-       ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-       assertFalse(App.search(array, 5));
-     }
- 
-     @Test
-     public void testEmptyArray() {
-       ArrayList<Integer> array = new ArrayList<>();
-       assertFalse(App.search(array, 1));
-     }
- 
-     @Test
-     public void testNull() {
-       assertFalse(App.search(null, 1));
-     }
- 
- 
+    
     @Test void appHasAGreeting() {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
     }
 
     @Test public void testNull2(){
-        assertFalse(App.searchForTwo(null, 1,2));
+        assertFalse(App.searchForAtmostOneOfTwo(null, 1,2));
     }
 
     @Test
     public void testEmptyArray2() {
         ArrayList<Integer> array = new ArrayList<>();
-        assertFalse(App.searchForTwo(array, 1,2));
+        assertFalse(App.searchForAtmostOneOfTwo(array, 1,2));
     }
 
     @Test
     public void testNotFound2() {
         ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-        assertFalse(App.searchForTwo(array, 5, 6));
+        assertFalse(App.searchForAtmostOneOfTwo(array, 5, 6));
     }
 
     @Test
     public void TestFound2(){
         ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-        assertTrue(App.searchForTwo(array, 4, 3));
+        assertTrue(App.searchForAtmostOneOfTwo(array, 4, 3));
     }
 
     @Test
     public void TestFoundDifferentTypes(){
         ArrayList<Number> array = new ArrayList<>(Arrays.asList(1, 2.5, 3, 4));
-        assertTrue(App.searchForTwo(array, 2.5, 3));
+        assertTrue(App.searchForAtmostOneOfTwo(array, 2.5, 3));
     }
 }

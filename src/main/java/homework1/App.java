@@ -18,17 +18,8 @@ import spark.template.mustache.MustacheTemplateEngine;
 
 
 public class App {
-    public static boolean search(ArrayList<Integer> array, int e) {
-        System.out.println("inside search");
-        if (array == null) return false;
-  
-        for (int elt : array) {
-          if (elt == e) return true;
-        }
-        return false;
-    }
 
-    public static <T extends Number,R extends Number,S extends Number> boolean searchForTwo(ArrayList<T> array,R element1,S element2){
+    public static <T extends Number,R extends Number,S extends Number> boolean searchForAtmostOneOfTwo(ArrayList<T> array,R element1,S element2){
         if (array == null) return false;
 
         boolean found1=false,found2=false;
@@ -77,7 +68,7 @@ public class App {
         String input2 = req.queryParams("input2").replaceAll("\\s","");
         int input2AsInt = Integer.parseInt(input2);
 
-        boolean result = App.searchForTwo(inputList, input2AsInt,input2AsInt*input2AsInt);
+        boolean result = App.searchForAtmostOneOfTwo(inputList, input2AsInt,input2AsInt*input2AsInt);
 
         Map<String, Boolean> map = new HashMap<String, Boolean>();
         map.put("result", result);
