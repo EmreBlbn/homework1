@@ -26,7 +26,20 @@ public class App {
           if (elt == e) return true;
         }
         return false;
-      }
+    }
+
+    public static <T extends Number,R extends Number,S extends Number> boolean searchForTwo(ArrayList<T> array,R element1,S element2){
+        if (array == null) return false;
+
+        boolean found1=false,found2=false;
+
+        for (T elt: array){
+          if (elt.doubleValue()==element1.doubleValue()) found1=true;
+          if (elt.doubleValue()==element2.doubleValue()) found2=true;
+        }
+
+        return found1 || found2;
+    }
 
     public String getGreeting() {
         return "Hello world.";
