@@ -77,7 +77,7 @@ public class App {
         String input2 = req.queryParams("input2").replaceAll("\\s","");
         int input2AsInt = Integer.parseInt(input2);
 
-        boolean result = App.search(inputList, input2AsInt);
+        boolean result = App.searchForTwo(inputList, input2AsInt,input2AsInt*input2AsInt);
 
         Map<String, Boolean> map = new HashMap<String, Boolean>();
         map.put("result", result);
