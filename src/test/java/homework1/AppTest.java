@@ -60,4 +60,10 @@ class AppTest {
         ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         assertTrue(App.searchForTwo(array, 4, 3));
     }
+
+    @Test
+    public void TestFoundDifferentTypes(){
+        ArrayList<Number> array = new ArrayList<>(Arrays.asList(1, 2.5, 3, 4));
+        assertTrue(App.searchForTwo(array, 2.5, 3));
+    }
 }
