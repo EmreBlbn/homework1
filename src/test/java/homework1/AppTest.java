@@ -38,4 +38,26 @@ class AppTest {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
     }
+
+    @Test public void testNull2(){
+        assertFalse(App.searchForTwo(null, 1,2));
+    }
+
+    @Test
+    public void testEmptyArray2() {
+        ArrayList<Integer> array = new ArrayList<>();
+        assertFalse(App.searchForTwo(array, 1,2));
+    }
+
+    @Test
+    public void testNotFound2() {
+        ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        assertFalse(App.searchForTwo(array, 5, 6));
+    }
+
+    @Test
+    public void TestFound2(){
+        ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        assertTrue(App.searchForTwo(array, 4, 3));
+    }
 }
