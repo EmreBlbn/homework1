@@ -16,24 +16,24 @@ class AppTest {
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
     }
 
-    @Test public void testNull2(){
+    @Test public void testNull(){
         assertFalse(App.searchForAtmostOneOfTwo(null, 1,2));
     }
 
     @Test
-    public void testEmptyArray2() {
+    public void testEmptyArray() {
         ArrayList<Integer> array = new ArrayList<>();
         assertFalse(App.searchForAtmostOneOfTwo(array, 1,2));
     }
 
     @Test
-    public void testNotFound2() {
+    public void testNotFound() {
         ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         assertFalse(App.searchForAtmostOneOfTwo(array, 5, 6));
     }
 
     @Test
-    public void TestFound2(){
+    public void TestFound(){
         ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         assertTrue(App.searchForAtmostOneOfTwo(array, 4, 3));
     }
