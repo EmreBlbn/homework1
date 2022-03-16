@@ -60,7 +60,7 @@ public class App {
         //System.out.println(req.queryParams("input1"));
         //System.out.println(req.queryParams("input2"));
 
-        /*
+        
         String input1 = req.queryParams("input1");
         java.util.Scanner sc1 = new java.util.Scanner(input1);
         sc1.useDelimiter("[;\r\n]+");
@@ -78,24 +78,6 @@ public class App {
         int input2AsInt = Integer.parseInt(input2);
 
         boolean result = App.search(inputList, input2AsInt);
-*/
-        String input1 = req.queryParams("input1");
-        java.util.Scanner sc1 = new java.util.Scanner(input1);
-        sc1.useDelimiter("[;\r\n]+");
-        java.util.ArrayList<Number> inputList = new java.util.ArrayList<>();
-        while (sc1.hasNext())
-        {
-          Number value = Double.parseDouble(sc1.next().replaceAll("\\s",""));
-          inputList.add(value);
-        }
-        sc1.close();
-        System.out.println(inputList);
-
-
-        String input2 = req.queryParams("input2").replaceAll("\\s","");
-        Number input2AsInt = Double.parseDouble(input2);
-
-        boolean result = App.searchForTwo(inputList, input2AsInt,2);
 
         Map<String, Boolean> map = new HashMap<String, Boolean>();
         map.put("result", result);
