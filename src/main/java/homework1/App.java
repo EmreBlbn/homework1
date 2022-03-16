@@ -32,9 +32,6 @@ public class App {
         return found1 || found2;
     }
 
-    public String getGreeting() {
-        return "Hello world.";
-    }
 
     public static void main(String[] args) {
       Logger logger =Logger.getLogger(App.class.getName());
